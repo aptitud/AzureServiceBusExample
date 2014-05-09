@@ -1,10 +1,12 @@
 ﻿namespace WebFront
 {
     using Nancy;
+    using System.Text;
+    using WebFront.MQ;
 
     public class IndexModule : NancyModule
     {
-        public IndexModule()
+        public IndexModule(ServiceBus servicebus)
         {
             Get["/"] = parameters =>
             {
@@ -14,8 +16,9 @@
             Post["/Save"] = parameters =>
             {
                 string name = Request.Form["Name"];
-                //var hub = GlobalHost.ConnectionManager.GetHubContext<SubscriberlistHub>();
-                //hub.Clients.All.addNewSubscriber(name);
+                var client = servicebus.GetClient();
+                var data = Encoding.UTF8.GetBytes(name);
+                client.Send(data, data.Length);
                 return HttpStatusCode.OK;
             };
         }
