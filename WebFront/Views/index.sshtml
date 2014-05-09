@@ -3,18 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>WebFront</title>
-
-	<style type="text/css">
-
-		body {
-			text-align: center;
-		}
-
-	</style>
-
 </head>
 <body>
-	<img src="@Path['~/Content/nancy-logo.png']" alt="Nancy logo" /><br />
-	This view was rendered using the SuperSimpleViewEngine
+
+
+  <form action="/Save" method="Post">
+    <label for="Name">Namn</label>
+    <input id="Name" type="text" name="Name" ></input>
+    <input type="submit" value="Anmäl"></input>
+  </form>
+  
 </body>
 </html>
