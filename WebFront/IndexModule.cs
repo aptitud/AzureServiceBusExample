@@ -1,8 +1,6 @@
 ﻿namespace WebFront
 {
-    using Microsoft.AspNet.SignalR;
     using Nancy;
-    using WebFront.Hubs;
 
     public class IndexModule : NancyModule
     {
@@ -16,8 +14,8 @@
             Post["/Save"] = parameters =>
             {
                 string name = Request.Form["Name"];
-                var hub = GlobalHost.ConnectionManager.GetHubContext<SubscriberlistHub>();
-                hub.Clients.All.addNewSubscriber(name);
+                //var hub = GlobalHost.ConnectionManager.GetHubContext<SubscriberlistHub>();
+                //hub.Clients.All.addNewSubscriber(name);
                 return HttpStatusCode.OK;
             };
         }

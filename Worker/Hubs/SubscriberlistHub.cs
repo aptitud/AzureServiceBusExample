@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNet.SignalR;
 
-namespace WebFront.Hubs
+namespace Worker.Hubs
 {
     public class SubscriberlistHub : Hub
     {
