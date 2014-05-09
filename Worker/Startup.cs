@@ -9,7 +9,6 @@ namespace Worker
         {
             app.UseCors(CorsOptions.AllowAll);
             app.MapSignalR();
-           
         }
     }
 }

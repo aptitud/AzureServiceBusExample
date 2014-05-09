@@ -8,14 +8,14 @@ namespace Worker
     {
         static void Main(string[] args)
         {
-            ServiceBus bus;
+            //ServiceBus bus;
             using (WebApp.Start<Startup>("http://localhost:8888/"))
             {
                 Console.WriteLine("Server running http://localhost:8888/");
-                bus = new ServiceBus();
+                //bus = new ServiceBus();
                 Console.ReadLine();
             }
-            bus.Dispose();
+            //bus.Dispose();
         }
     }
 }
