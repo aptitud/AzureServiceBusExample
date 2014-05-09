@@ -4,7 +4,7 @@ using System.Net;
 using System.Threading;
 using Microsoft.Owin.Hosting;
 using Microsoft.WindowsAzure.ServiceRuntime;
-using WebFront;
+using Worker;
 
 namespace WorkerRole1
 {
@@ -34,7 +34,7 @@ namespace WorkerRole1
             // see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
 
             var endPoint = RoleEnvironment.CurrentRoleInstance.InstanceEndpoints["SignalREndpoint"];
-            string baseUrl = string.Format("{0}://{1}", endPoint.Protocol, endPoint.IPEndpoint);
+            string baseUrl = string.Format("{0}://{1}/", endPoint.Protocol, "localhost:8888");
 
             Trace.TraceInformation(string.Format("Starting OWIN at {0}", baseUrl));
 
