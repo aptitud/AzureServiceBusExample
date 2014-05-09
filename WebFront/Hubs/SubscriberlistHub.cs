@@ -8,6 +8,5 @@ namespace WebFront.Hubs
 {
     public class SubscriberlistHub : Hub
     {
-
     }
 }
